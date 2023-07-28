@@ -11,7 +11,7 @@ app.get('/api/yelp-search', async (req, res) => {
     try {
         const response = await axios.get('https://api.yelp.com/v3/businesses/search', {
             headers: {
-                Authorization: `Bearer 9JGhQD_gxDC1ED2gR7xbAuw49YmrQhv-0ioQl9rZWU23wAwpK_d_WsoIwOS-xEysmYK0Mb4zd9AI_ii6ii6v1swhxX2MCqSX7ZM5JQiqIQc7gxpoPccqbKBJDDC-ZHYx`,
+                Authorization: `Bearer your_yelp_api_key`,
             },
             params: {
                 term: searchTerm,
