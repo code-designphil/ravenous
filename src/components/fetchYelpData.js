@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:4999/api/yelp-search'; // Replace with your backend server URL
+const BASE_URL = 'http://localhost:4999/api/yelp-search';
 
 async function fetchYelpData(searchTerm, location) {
     try {
