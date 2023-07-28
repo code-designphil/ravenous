@@ -1,6 +1,5 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Project Description
+"Incorporating the "Yelp Business Search API," this React App empowers users to input their desired cuisine and current whereabouts, promptly retrieving a curated list of matching establishments."
 
 ## Available Scripts
 
