@@ -1,25 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {useState} from 'react';
+import BusinessList from "./components/BusinessList";
+import SearchBar from "./components/SearchBar";
+import NavBar from "./components/NavBar";
+import fetchYelpData from "./components/fetchYelpData";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+
+    const [searchResults, setSearchResults] = useState([]);
+    const [submitted, setSubmitted] = useState(false);
+
+    async function handleSubmit (searchTerm, searchLocation){
+        const data = await fetchYelpData(searchTerm, searchLocation);
+        if (data) {
+            setSearchResults(data.businesses);
+        }
+        console.log(searchResults);
+        setSubmitted(true);
+    }
+
+    return (
+        <div className="App">
+            <NavBar/>
+            <SearchBar onSubmit={handleSubmit}/>
+            <BusinessList businesses={searchResults} submitted={submitted}/>
+        </div>
+        );
+    }
 
 export default App;
