@@ -1,0 +1,15 @@
+.business-list {
+    max-width: 1500px;
+    margin: 200px auto 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.gutter-outside {
+    margin: 0 5vw 0 5vw;
+}
+
+.business {
+    margin: 0 25px 100px 25px;
+}
